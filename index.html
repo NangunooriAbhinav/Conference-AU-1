@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="refresh"
-      content="0;url=https://online.flippingbook.com/view/27047520/"
-    />
-    <title>Document</title>
+    <title>PDF Images Display</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <script src="index.js"></script>
+    <div class="box">
+      <div id="image-container"></div>
+    </div>
+    <script>
+      function loadImages() {
+        var container = document.getElementById("image-container");
+        var numberOfImages = 74; // Set this to the number of images you have
+
+        for (var i = 1; i <= numberOfImages; i++) {
+          var img = document.createElement("img");
+          img.src =
+            "assets/1703151453710-3dec6919-289c-4cf5-bdc1-0866daf55c8d_" +
+            i +
+            ".jpg"; // Assumes the images are named page1.jpg, page2.jpg, etc.
+          img.alt = "Page " + i;
+          container.appendChild(img);
+        }
+      }
+
+      window.onload = loadImages;
+    </script>
   </body>
 </html>
